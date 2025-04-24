@@ -1,0 +1,31 @@
+
+CREATE TABLE clientes (
+    id_cliente VARCHAR(50) NOT NULL,
+    zona VARCHAR(100) DEFAULT NULL,
+    pais VARCHAR(100) DEFAULT NULL,
+    PRIMARY KEY (id_cliente)
+);
+
+CREATE TABLE productos (
+    id_producto VARCHAR(50) NOT NULL,
+    tipo_producto VARCHAR(100) DEFAULT NULL,
+    precio_unitario DECIMAL(10, 2) DEFAULT NULL,
+    coste_unitario DECIMAL(10, 2) DEFAULT NULL,
+    PRIMARY KEY (id_producto)
+);
+
+CREATE TABLE ventas (
+    id_venta INT(11) NOT NULL AUTO_INCREMENT,
+    id_cliente VARCHAR(50) DEFAULT NULL,
+    id_producto VARCHAR(50) DEFAULT NULL,
+    canal_venta VARCHAR(50) DEFAULT NULL,
+    prioridad VARCHAR(50) DEFAULT NULL,
+    fecha_pedido DATE DEFAULT NULL,
+    fecha_envio DATE DEFAULT NULL,
+    unidades INT(11) DEFAULT NULL,
+    importe_venta_total DECIMAL(15, 2) DEFAULT NULL,
+    importe_coste_total DECIMAL(15, 2) DEFAULT NULL,
+    PRIMARY KEY (id_venta),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+);

@@ -1,0 +1,27 @@
+{
+  "name": "aplicacion-proyecto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyecto completo con backend y frontend",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run start --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "keywords": [
+    "backend",
+    "frontend",
+    "nodejs",
+    "react",
+    "express",
+    "mariadb",
+    "sequelize"
+  ],
+  "author": "Ismael",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
