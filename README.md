@@ -1,57 +1,57 @@
-# 🚀 API DATOS - Sistema de Gestión para Ventas, Productos y Clientes
+# 🚀 API DATOS - Management System for Sales, Products and Customers
 
-## 📊 Plataforma MERN para Gestión de Datos
+## 📊 MERN Platform for Data Management
 
 ![Project Banner](https://via.placeholder.com/1200x400.png?text=API+DATOS)
 
-### 📌 Descripción del Proyecto
+### 📌 Project Description
 
-La aplicación **API DATOS** es un sistema de gestión diseñado para optimizar las operaciones de ventas, productos y clientes. Utilizando el stack MERN (MariaDB, Express, React, Node.js), esta plataforma permite realizar operaciones CRUD de forma eficiente, asegurando un flujo de trabajo sencillo e intuitivo.
-
----
-
-### 🛠 Tecnologías Principales
-
-| Tecnología           | Función             | Descripción                                           |
-| -------------------- | ------------------- | ----------------------------------------------------- |
-| 🌐 **Frontend**      | React + Material-UI | Interfaz intuitiva y adaptativa para usuarios finales |
-| ⚙️ **Backend**       | Node.js + Express   | Gestión de lógica de negocio y API REST               |
-| 🗄️ **Base de Datos** | MariaDB             | Almacenamiento de datos estructurados para el sistema |
-| 🔄 **API**           | Axios               | Comunicación entre frontend y backend                 |
+The **API DATOS** application is a management system designed to optimize sales, product, and customer operations. Using the MERN stack (MariaDB, Express, React, Node.js), this platform allows efficient CRUD operations, ensuring a simple and intuitive workflow.
 
 ---
 
-### ✨ Características Principales
+### 🛠 Main Technologies
 
-1. **Gestión de Clientes**
-
-   - Registro, edición, visualización y eliminación de datos de clientes.
-   - Gestión eficiente de información relevante.
-
-2. **Gestión de Productos**
-
-   - Control completo de los datos de productos, incluyendo precios y costes.
-
-3. **Gestión de Ventas**
-
-   - Registro de pedidos y cálculo de importes totales.
-
-4. **Interfaz Adaptativa**
-   - Optimizada para navegadores modernos y dispositivos móviles.
+| Technology      | Function            | Description                                    |
+| --------------- | ------------------- | ---------------------------------------------- |
+| 🌐 **Frontend** | React + Material-UI | Intuitive and adaptive interface for end users |
+| ⚙️ **Backend**  | Node.js + Express   | Business logic management and REST API         |
+| 🗄️ **Database** | MariaDB             | Structured data storage for the system         |
+| 🔄 **API**      | Axios               | Communication between frontend and backend     |
 
 ---
 
-### 🏗️ Estructura del Proyecto
+### ✨ Main Features
+
+1. **Customer Management**
+
+   - Registration, editing, viewing, and deletion of customer data.
+   - Efficient management of relevant information.
+
+2. **Product Management**
+
+   - Complete control of product data, including prices and costs.
+
+3. **Sales Management**
+
+   - Order registration and calculation of total amounts.
+
+4. **Adaptive Interface**
+   - Optimized for modern browsers and mobile devices.
+
+---
+
+### 🏗️ Project Structure
 
 ```plaintext
 API-DATOS/
-├── backend/          # Lógica de negocio y API REST
+├── backend/          # Business logic and REST API
 │   ├── config/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
 │   └── server.js
-├── frontend/         # Interfaz de usuario
+├── frontend/         # User interface
 │   ├── src/
 │   │   ├── components/
 │   │   ├── config.js
@@ -59,76 +59,99 @@ API-DATOS/
 └── package.json
 ```
 
-### 🔧 Instalación y Configuración
+### 🔧 Installation and Configuration
 
-#### Requisitos Previos
+#### Prerequisites
 
-        - Node.js
-        - MariaDB
-        - npm
+- Node.js
+- MariaDB
+- npm
 
-#### Pasos de Instalación
+#### Installation Steps
 
-1. - Clonar el Repositorio
-2. - Instalar Dependencias
-3. - Configurar Base de Datos
+1. - Clone the Repository
+
+   ```
+   git clone [repository-url]
+   cd API-DATOS
+   ```
+
+2. - Install All Dependencies (backend and frontend)
+
+   ```
+   npm run install:all
+   ```
+
+3. - Configure Database
    - CREATE DATABASE ventas_db;
-4. - Configurar Variables de Entorno Crear un archivo .env en /backend con el siguiente contenido:
 
-   plaintext
-   Copiar código
+4. - Configure Environment Variables. Create a .env file in /backend with the following content:
+
+   ```plaintext
    DB_HOST=localhost
    DB_USER=root
    DB_PASSWORD=
    DB_NAME=ventas_db
    DB_PORT=3306
    PORT=5000
+   ```
 
-5. - Iniciar la Aplicación
-     npm start
+5. - Start the Application
+   ```
+   npm start
+   ```
 
-### 🗂 Endpoints API
+### 🗂 API Endpoints
 
-Clientes
+```plaintext
+Customers
 GET /api/clientes
 GET /api/clientes/:id
 POST /api/clientes
 PUT /api/clientes/:id
 DELETE /api/clientes/:id
-Productos
+
+Products
 GET /api/productos
 GET /api/productos/:id
 POST /api/productos
 PUT /api/productos/:id
 DELETE /api/productos/:id
-Ventas
+
+Sales
 GET /api/ventas
 GET /api/ventas/:id
 POST /api/ventas
 PUT /api/ventas/:id
 DELETE /api/ventas/:id
+```
 
-## 📄 Base de Datos
+## 📄 Database
 
-### Tabla Clientes
+### Customers Table
 
+```sql
 CREATE TABLE clientes (
 id_cliente VARCHAR(50) PRIMARY KEY,
 zona VARCHAR(100),
 pais VARCHAR(100)
 );
+```
 
-### Tabla Productos
+### Products Table
 
+```sql
 CREATE TABLE productos (
 id_producto VARCHAR(50) PRIMARY KEY,
 tipo_producto VARCHAR(100),
 precio_unitario DECIMAL(10,2),
 coste_unitario DECIMAL(10,2)
 );
+```
 
-### Tabla Ventas
+### Sales Table
 
+```sql
 CREATE TABLE ventas (
 id_venta INT AUTO_INCREMENT PRIMARY KEY,
 id_cliente VARCHAR(50),
@@ -140,23 +163,24 @@ importe_coste_total DECIMAL(10,2),
 FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
 FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
+```
 
-## 🎯 Objetivos del Proyecto
+## 🎯 Project Objectives
 
-Simplificar la gestión de datos de ventas, productos y clientes.
-Crear un sistema adaptable a necesidades empresariales.
-Ofrecer un flujo de trabajo eficiente y accesible.
+- Simplify the management of sales, product, and customer data.
+- Create a system adaptable to business needs.
+- Offer an efficient and accessible workflow.
 
-### 📄 Licencia
+### 📄 License
 
-Este proyecto está bajo la Licencia ISC.
+This project is under the ISC License.
 
-### 🔍 Próximas Mejoras
+### 🔍 Upcoming Improvements
 
-Implementar gráficos interactivos para análisis de datos.
-Añadir autenticación de usuarios.
-Optimizar la interfaz para dispositivos móviles.
+- Implement interactive charts for data analysis.
+- Add user authentication.
+- Optimize interface for mobile devices.
 
-### ✉️ Contacto
+### ✉️ Contact
 
-API DATOS - Creado por Ismael
+API DATOS - Created by Ismael

@@ -1,0 +1,16 @@
+---- 
+añadir cosas de las que se me ocurren
+añadir las cosas que he mejorado
+----
+
+DO
+====
+1. traducir en ingles el readme
+
+
+TODO
+=====
+2. eliminar y mejorar la gestión de errores
+3. miniminzar setup del read.md
+4. añadir un pantallazo del output
+5. eliminar el código que no sirva del frontent (test)
